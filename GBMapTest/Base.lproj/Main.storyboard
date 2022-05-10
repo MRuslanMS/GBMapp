@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GBMapTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyT-bP-aW3" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Растояние" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aR-4G-zDi">
+                                        <rect key="frame" x="8" y="0.0" width="84" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="3aR-4G-zDi" firstAttribute="top" secondItem="ZyT-bP-aW3" secondAttribute="top" id="Mfi-Jq-DXz"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3aR-4G-zDi" secondAttribute="trailing" constant="20" symbolic="YES" id="hbY-em-y9c"/>
+                                    <constraint firstItem="3aR-4G-zDi" firstAttribute="leading" secondItem="ZyT-bP-aW3" secondAttribute="leading" constant="8" id="tOu-cF-TYn"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Iy-6y-VJk">
+                                <rect key="frame" x="275" y="791" width="99" height="31"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add Marker">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleBody"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addMarkerDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ws-jo-bzf"/>
+                                    <action selector="didTabMeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yxD-jR-qFI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bge-C6-e9Q">
+                                <rect key="frame" x="40" y="791" width="130.5" height="31"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Update Location"/>
+                                <connections>
+                                    <action selector="didTapLocationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PnS-bl-Bsb"/>
+                                    <action selector="didTapUpdateLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2U1-yi-2fV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3Iy-6y-VJk" secondAttribute="bottom" constant="40" id="7eC-uX-zaA"/>
+                            <constraint firstItem="ZyT-bP-aW3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8wr-Cb-K50"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bge-C6-e9Q" secondAttribute="bottom" constant="40" id="Fw1-fQ-0dg"/>
+                            <constraint firstItem="3Iy-6y-VJk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bge-C6-e9Q" secondAttribute="trailing" constant="8" symbolic="YES" id="M6B-f5-1yT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZyT-bP-aW3" secondAttribute="bottom" id="Nl9-7i-1kI"/>
+                            <constraint firstItem="ZyT-bP-aW3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Umz-mH-s4U"/>
+                            <constraint firstItem="bge-C6-e9Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="fPb-pc-Idv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZyT-bP-aW3" secondAttribute="trailing" id="pqH-1u-vU2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Iy-6y-VJk" secondAttribute="trailing" constant="40" id="rzK-1S-I0h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="distantionLabek" destination="3aR-4G-zDi" id="9cN-Fg-MJb"/>
+                        <outlet property="mapView" destination="ZyT-bP-aW3" id="ziS-Z3-2Jw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121.73913043478262" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
